@@ -1,0 +1,11 @@
+.env
+*.local
+airflow/logs/**
+transform/target/
+transform/dbt_packages/
+dbt_packages/
+transform/logs/
+logs/
+.meltano/
+**/__pycache__/
+**/*.pyc

@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(meltano invoke dbt-bigquery compile)",
+      "Bash(meltano invoke dbt-bigquery test:*)",
+      "Bash(meltano invoke sqlfluff:lint:*)",
+      "Read(**)",
+      "Edit(transform/models/**)",
+      "Edit(transform/models/marts/**/*.yml)",
+      "Bash(claude mcp:*)",
+      "mcp__jira__jira_get_all_projects",
+      "mcp__jira__jira_get_issue",
+      "mcp__jira__jira_get_transitions",
+      "mcp__jira__jira_update_issue",
+      "mcp__jira__jira_transition_issue",
+      "mcp__jira__jira_get_user_profile",
+      "mcp__jira__jira_create_issue",
+      "mcp__bigquery__query"
+    ],
+    "deny": [
+      "Bash(meltano invoke dbt-bigquery run --full-refresh*)",
+      "Bash(meltano invoke dbt-bigquery build --full-refresh*)",
+      "Bash(kubectl:*)",
+      "Bash(gcloud:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "jira",
+    "bigquery"
+  ]
+}
